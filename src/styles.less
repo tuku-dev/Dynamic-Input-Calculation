@@ -1,0 +1,197 @@
+body {
+  font-family: sans-serif;
+}
+input {
+  &[type="text"],
+  &[type="number"],
+  &[type="password"] {
+    background: #f4f4f4;
+    border: 1px solid #ebebeb;
+    padding: 0.6em 0.7em;
+    border-radius: 3px;
+    box-shadow: 0 0 0 rgb(0 0 0 / 0%) !important;
+  }
+}
+aside.modal button {
+  position: absolute;
+  bottom: 1.5em;
+  right: 2em;
+  font-size: 1.2em;
+}
+button.cancel,
+.button.cancel,
+.cancel {
+  color: #333;
+  background: #de1219;
+  color: #fff;
+  padding: 0.4em 1em;
+  display: inline-block;
+  border-radius: 3px;
+  font: 0.9em/2em OpenSansSemibold, Arial, sans-serif;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  background: #e1e1e1;
+}
+button,
+input[type="submit"],
+input[type="button"],
+.button {
+  background: #de1219;
+  color: #fff;
+  padding: 0.4em 1em;
+  display: inline-block;
+  border-radius: 3px;
+  font: 0.9em/2em OpenSansSemibold, Arial, sans-serif;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+aside {
+  max-width: 550px;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 100px;
+  box-shadow: 0 10px 50px 15px #a0a0a085;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  position: relative;
+  font: 0.8em/1.6em OpenSansRegular, Arial, sans-serif;
+  min-height: 13em;
+  color: #333;
+  transition: all 0.2s ease-out;
+  &#scenarios-ab-split-popup {
+    overflow: visible;
+  }
+  &.modal.scenario-node-modal {
+    * {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+    div {
+      padding: 0;
+    }
+    input,
+    select {
+      position: static;
+    }
+    .ab-split-range {
+      position: static;
+      margin: 0 auto;
+      display: block;
+      width: 80%;
+    }
+    .ab-split-inputs {
+      position: static;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 15px;
+    }
+    .ab-control-group-section {
+      margin-top: 15px;
+      .control-group-chkbox {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        line-height: 1.5;
+        input[type="checkbox"] {
+          margin: 0;
+        }
+        label {
+          padding: 0;
+        }
+      }
+      .ab-cg-inputs {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        &.enable {
+          display: flex;
+        }
+        &.disable {
+          display: none;
+        }
+      }
+    }
+    .ab-split-chart {
+      margin-bottom: 15px;
+    }
+    .ab-split-item {
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      input {
+        position: static;
+      }
+      .numbering {
+        min-width: 10px;
+      }
+    }
+
+    .custom-graph {
+      display: grid;
+      grid-gap: 0;
+      animation: graph-increase 0.5s linear;
+      margin-bottom: 15px;
+      .graph-item {
+        height: 20px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        &::before {
+          content: "" !important;
+          display: block !important;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgb(199, 199, 199);
+          background: linear-gradient(
+            180deg,
+            rgba(199, 199, 199, 0) 0%,
+            rgb(255 255 255 / 25%) 35%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+        .graph-item-tooltip {
+          position: absolute;
+          bottom: calc(100% + 5px);
+          right: 0;
+          padding: 5px 10px;
+          border-radius: 3px;
+          box-shadow: 0px 2px 5px rgb(0 0 0 / 40%);
+          color: #fff;
+          display: none;
+          flex-direction: column;
+          min-width: 100px;
+        }
+        &:hover {
+          .graph-item-tooltip {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+.k-tooltip.k-chart-tooltip {
+  padding: 0;
+  .k-tooltip-content {
+    padding: 0.5em 1em !important;
+  }
+}
